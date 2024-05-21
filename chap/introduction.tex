@@ -1,0 +1,54 @@
+\section{引言}
+{\color{red}作者不对模板能够通过学校/学院的格式审查做任何明示或暗示的保证\footnote{这是一个脚注，脚注内容为小五号宋体，1.5倍行距。}。} 因参考文献使用GB7714标准，文档中还包含了Zeping Lee（李泽平） 编写的参考文献的样式文件（即两个后缀为.bst的文件）。
+
+\section{系统要求}
+宏包通过 CTeX 宏包来获得中文支持。 CTeX 宏包提供了一个
+统一的中文\LaTeX 文档框架, 它可以从\url{http://www.ctex.org}网站下载。
+
+此外， 宏包还使用了宏包 amsmath、 amsthm、 amsfonts、
+amssymb、 bm 和 hyperref。
+
+\subsection{下载与安装}
+宏包的最新版本可以从\url{https://github.com/sslchi/lixinthesis}下载。
+
+宏包包含一个文档类型文件.cls以及一个使用模板文件main.tex（也即本文的源文件）, 用户
+可以通过修改这个模板来编写自己的学位论文。
+
+
+\subsection{问题反馈}
+因为毕业论文的要求很详细，从字体到到段距、行距等，细节不知凡几。因此难免有疏漏之处{\color{red}（再次申明，作者不对模板能够通过学校/学院的格式审查做任何明示或暗示的保证）}，因此用户在使用中如果发现问题，可以联系:
+\begin{center}
+公众号：MathICU
+\end{center}
+
+{\large \color{red}如果有同学愿意接手这个模板的维护，那是再好不过的了。}
+\subsubsection{三级标题}
+使用\verb*|\subssection|可以得到一个带编号的三级标题。
+
+\paragraph{四级标题}
+使用\verb*|\paragraph|可以得到一个带编号的三级标题。
+
+
+\section{基本选项及命令介绍}\label{sec:basic}
+本章介绍模板的一些基本选项和命令。关于\LaTeX 的基本用法，数学写作应该已经学过。
+\subsection{编译}
+本模板基于cetxart宏包，暂时只支持xeLaTeX方式进行编译。使用{\bfseries TexStudio编辑器}的用户可以直接点击编辑器上的构建并查看按钮进行编译，无需进行设置； 使用其它编辑器的用户请设置编译方式为xeLaTeX.
+
+目前，只在TeXLive 2023上测试过，如果不能运行，请先检查版本是否是TeXLive 2023。
+
+此外， 本文档中的编码方式皆为UTF-8,若用编辑器打开之后显示乱码，请将编辑器编码方式设置为UTF-8。
+
+
+\subsection{模板中的选项及命令}
+\begin{tabular}{p{10cm}p{5cm}}
+	\verb|\title|         & 标题\\
+	\verb|\englishtitle|  & 英文标题\\
+	\verb|\IDnumber|      & 学号\\
+	\verb|\author|        & 作者\\
+	\verb|\school|        & 学院\\
+	\verb|\major|         & 专业\\
+	\verb|\class|         & 班级\\ 
+	\verb|\submityear|    & 提交年\\
+	\verb|\submitmonth|   & 提交月\\
+\end{tabular}
+

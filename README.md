@@ -33,3 +33,4 @@ A non-official LaTeX template for LIXIN
 - 修改四级标题设置，原因：四级标题单独占一行，而非跟后文紧接。
 - 加入listings宏包和tcolorbox宏包。
 - 打开ctex的粗体设置，而不是重新定义字体，原因：overleaf 上没有simkai.ttf和simsun.ttc（overleaf的操作系统应该是ubuntu，其使用fandol字体代替win中的中易字体）。
+- 添加使用说明。

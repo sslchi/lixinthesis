@@ -1,14 +1,17 @@
-\section{免责声明}
-
+\section{免责声明(Disclaimer)}
+本文简要介绍了本科毕业论文\LaTeX 模板的使用方法。在此，模板作者作声明如下：
 \begin{enumerate}
 	\item 本模板为作者无偿制作撰写，任何人都可以免费使用本模板。
 	\item 本模板未经学校相关部门审核及授权，在使用前请务必斟酌。
 	\item 作者不对模板能够通过学校/学院的格式审查做任何明示或暗示的保证，任何由于使用本模板而引起的论文格式审查问题均与本模板作者无关。	
 \end{enumerate}
 
-
-
-
+This article briefly introduces the usage of the undergraduate  \LaTeX~ thesis template. The template author makes the following statements:
+\begin{enumerate}
+    \item This template was created and written by the author voluntarily, and anyone can use it for free.
+    \item This template has not been reviewed or authorized by the relevant school departments, so please carefully consider its use.
+    \item The author makes no explicit or implicit guarantees that the template will pass the school/college's format review. Any issues arising from the use of this template concerning the format review are not the responsibility of the template author.
+\end{enumerate}
 
 \section{系统要求}
 模板通过 CTeX 宏包来获得中文支持。 CTeX 宏包提供了一个
@@ -45,7 +48,7 @@
 
 
 \section{基本选项及命令介绍}\label{sec:basic}
-本节介绍模板的一些基本选项和命令，关于\LaTeX 的基本用法，读者可以自行阅读\LaTeX~的相关教材，如刘海洋老师的《LaTeX入门》\cite{Liu2013}。
+本节介绍模板的一些基本选项和命令。
 
 
 
@@ -71,149 +74,40 @@
 \noindent 获得。
 
 
-\subsection{数学公式}
-数学公式分行内公式和行间公式。下面的例子说明了如何使用行内公式和行间公式，其中，上半部分是LaTeX中的内容，下半部分是输出。
-
-\begin{myexample}{行内公式举例}
-将字母置于两个美元符号之间，即可得到一个行内公式，如$a^2+b^2=c^2$。
-\end{myexample}
-
-
-\begin{myexample}{不带编号的行间公式举例}
-如果公式两边各有两个美元符号，可以得到一个不带编号的行间公式，例如
-$$a^2+b^2=c^2,$$
-注意，行间公式一般应该带标点符号。
-\end{myexample}
-
-\begin{myexample}{数学公式举例}
-如果想得到一个带编号的行间公式，可以使用公式环境，例如
-\begin{equation}\label{eq:exm1}
-    a^2+b^2=c^2.
-\end{equation}
-公式环境中的\verb|\label|命令后的参数，可以让我们方便地进行公式引用。
-你可以使用合适的字母为公式命名，并使用\verb|\eqref|进行引用。
-
-例如，在这里，我们可以使用\eqref{eq:exm1}引用上述公式。
-如果不需要引用，则不必添加label。
-\end{myexample}
-
-\noindent 值得注意的是，在数学公式环境中，有些符号，如：
-\begin{enumerate}
-	\item 微分符号$d$应该用直体，写作$\d x$；
-	\item $max$应写作$\max$, $min$应写作$\min$；
-	\item 三角函数应写作直体，如$sin$应写作$\sin$；
-	\item 英文缩写等应写成直体，如$\mathrm{s.t.}$;
-\end{enumerate}
-应该使用直体，在公式环境中，使用{\ttfamily $\backslash$mathrm\{\}}可以获得直体字母，示例如下：
-
-\begin{myexample}{}
-$a^2+b^2=c^2,\ \mathrm{for}\ a>0$
-\end{myexample}
-
-
-\subsection{定理环境}
-在模板中，我们还预先定义了一些定理环境。这些环境的名字及意义如下
-\begin{mybox}
-\begin{tabular}{p{10cm}p{5cm}}
-	\verb|example|         	& 例\\
-	\verb|theorem|       	& 定理\\
-	\verb|remark|      		& 注\\
-	\verb|lemma|        	& 引理\\
-	\verb|definition|       & 定义\\
-	\verb|proof|         	& 证明\\
-\end{tabular}
-\end{mybox}
-\noindent 使用方法如下：
-\begin{myexample}{定理环境使用举例}
-\begin{definition}[直角三角形]\label{def:exm1}
-  若三角形有一个角是直接，则称该三角形为直角三角形。
-\end{definition}
-可以使用定理~\ref{def:exm1}引用该定理。
-\end{myexample}
-\noindent 其余定理环境的使用方式类似。
-
-\subsection{图形和表格}\label{sec:tabfig}
-
-我们可以使用figure环境和table环境插入图片和表格。
-
-\begin{listonly}{图形示例}
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[width=0.35\linewidth]{lixinlogo.jpg}\quad
-        \includegraphics[width=0.35\linewidth]{lixinlogo.jpg}
-    \end{center}
-    \caption[图形示例]{两个校徽}\label{fig:exm1}
-\end{figure}
-\noindent 可以使用图~\ref{fig:exm1}引用该图片。% \noindent 表示改行不缩进
-\end{listonly}
-
-\noindent 上述内容可以得到如下输出：
-
-
-\begin{figure}[htbp]
-	\begin{center}
-		\includegraphics[width=0.35\linewidth]{lixinlogo.jpg}\quad
-		\includegraphics[width=0.35\linewidth]{lixinlogo.jpg}
-	\end{center}
-	\caption[图形示例]{两个校徽}\label{fig:exm1}
-\end{figure}
-\noindent 可以使用图~\ref{fig:exm1}引用该图片。% \noindent 表示改行不缩进
-
-
-
-
-\begin{listonly}{表格示例}
-\begin{table}[htbp]
-    \caption{三线表}\label{tab:exp1}
-    \begin{center}
-        \newcolumntype{C}{>{\centering\arraybackslash}X}%
-        \begin{tabularx}{0.9\linewidth}{CCCCCC}
-            \toprule
-            1 & 2 & 3 & 4 & 5 & 6\\
-            \midrule
-            1 & 2 & 3 & 4 & 5 & 6\\
-            1 & 2 & 3 & 4 & 5 & 6\\
-            1 & 2 & 3 & 4 & 5 & 6\\
-            \bottomrule
-        \end{tabularx}
-    \end{center}
-\end{table}
-\noindent 可以使用表~\ref{tab:exm1}引用该表格。% \noindent 表示改行不缩进
-\end{listonly}
-
-\noindent 上述内容可以得到如下输出：
-
-
-\begin{table}[htbp]
-	\caption{三线表}\label{tab:exm1}
-	\begin{center}
-		\newcolumntype{C}{>{\centering\arraybackslash}X}%
-		\begin{tabularx}{0.9\linewidth}{CCCCCC}
-			\toprule
-			1 & 2 & 3 & 4 & 5 & 6\\
-			\midrule
-			1 & 2 & 3 & 4 & 5 & 6\\
-			1 & 2 & 3 & 4 & 5 & 6\\
-			1 & 2 & 3 & 4 & 5 & 6\\
-			\bottomrule
-		\end{tabularx}
-	\end{center}
-\end{table}
-\noindent 可以使用表~\ref{tab:exm1}引用该表格。% \noindent 表示改行不缩进
-
-
 \subsection{各级标题}
 各级标可以使用如下命令获得：
 \begin{mybox}
-\begin{tabular}{p{10cm}p{5cm}}
-	\verb|\section|         	& 一级标题\\
-	\verb|\subsection|       	& 二级标题\\
-	\verb|\subsubsection|      	& 三级标题\\
-	\verb|\paragraph|        	& 四级标题\\
-\end{tabular}
+	\begin{tabular}{p{10cm}p{5cm}}
+		\verb|\section|         	& 一级标题\\
+		\verb|\subsection|       	& 二级标题\\
+		\verb|\subsubsection|      	& 三级标题\\
+		\verb|\paragraph|        	& 四级标题\\
+	\end{tabular}
 \end{mybox}
 \noindent 例如，下面是一个三级标题的使用示例：
 \begin{myexample}{使用标题示例}
 \subsubsection{这是一个三级标题}
 \end{myexample}
-\noindent 其它级别的标题类似。\cite{xiu2002wiener}
+\noindent 其它级别的标题类似。
+
+
+\subsection{定理环境}
+在模板中，我们还预先定义了一些定理环境。这些环境的名字及意义如下
+\begin{mybox}
+	\begin{tabular}{p{10cm}p{5cm}}
+		\verb|example|         	& 例\\
+		\verb|theorem|       	& 定理\\
+		\verb|remark|      		& 注\\
+		\verb|lemma|        	& 引理\\
+		\verb|definition|       & 定义\\
+		\verb|proof|         	& 证明\\
+	\end{tabular}
+\end{mybox}
+\noindent 使用方法如下：
+\begin{myexample}{定理环境使用举例}
+\begin{definition}[直角三角形]\label{def:exm1}
+    若三角形有一个角是直接，则称该三角形为直角三角形。
+\end{definition}
+可以使用定理~\ref{def:exm1}引用该定理。
+\end{myexample}
+\noindent 其余定理环境的使用方式类似。

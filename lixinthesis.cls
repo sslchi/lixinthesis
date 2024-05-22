@@ -60,7 +60,7 @@
 \newtheorem{example}{例}[section]
 \newtheorem{theorem}{定理}[section]
 \newtheorem{remark}{注}[section]
-\newtheorem{lemma}[theorem]{引理~}
+\newtheorem{lemma}[theorem]{引理}
 \theoremstyle{definition}
 \newtheorem{definition}{定义}[section]
 \renewcommand{\proofname}{\bfseries 证明}
@@ -195,7 +195,7 @@
 \let\lixnbibliography\bibliography
 \renewcommand{\bibliography}[1]{
 \begin{spacing}{1.625}
-	\lixnbibliography{book,journal}%
+	\lixnbibliography{#1}%
 \end{spacing}
 \addcontentsline{toc}{section}{参考文献}
 }

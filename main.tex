@@ -54,13 +54,9 @@
 
 \renewcommand{\lstlistingname}{代码}
 % tcolorbox settings
-
-\newtcblisting{myexample}{%
-	colback=red!5!white,
-	colframe=red!75!black,,listing and text}
-
-
-
+\newtcolorbox{mybox}[1][]{fonttitle=\bfseries,title={#1}}
+\newtcblisting{myexample}[1]{fonttitle=\bfseries,title=#1,listing and text}
+\newtcblisting{listonly}[1]{fonttitle=\bfseries,title=#1,listing only}
 % set search path
 \graphicspath{{pic/}}
 
@@ -80,7 +76,8 @@
 
 %%%%%%%%%%%%%%%%%% 自定义宏命令 %%%%%%%%%%%%%%%
 
-\renewcommand{\d}{\mathrm{d}} %% \d 已经有\d 这个命令
+\renewcommand{\d}{\mathrm{d}} %% \d 已经有\d 这个命令，用renewcommand
+\newcommand{\dx}{\mathrm{d}x} %% \dx 没有\dx 这个命令，用newcommand
 
 %%%%%%%%%%%%%%%%%%%
 
@@ -88,34 +85,26 @@
 \begin{document}
 
 
-\maketitle
-
-% 前文部分
+\maketitle  %%%% 制作封面
 
 \input{chap/annonce}
-\frontmatter
-%
+\frontmatter %%%% 前文部分
+
 \input{chap/abstract}
-%
+
 \tableofcontents
-%%
-%%%%%正文部分
-\mainmatter
-%
+
+
+\mainmatter %%%% 正文部分
+
 \input{chap/introduction}
-\input{chap/math}
-
-%%% 后文部分
-\backmatter
 
 
-%\begin{spacing}{1.625}
-\bibliography{book,journal}%
-%\end{spacing}
-%
-%\addcontentsline{toc}{section}{参考文献}
+\backmatter %%%% 后文部分
 
-\input{chap/appendix}
-\input{chap/thanks}
+
+\bibliography{book,journal} %%% 参考文献
+\input{chap/appendix}   %%%% 附录，不需要注释掉
+\input{chap/thanks}     %%%% 致谢
 
 \end{document}

@@ -15,6 +15,18 @@
 
 \LoadClass[a4paper,UTF8,zihao=-4]{ctexart}
 
+\RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,amsthm}
+\RequirePackage{graphicx,color,CJKfntef,geometry,fancyhdr}
+\RequirePackage[super,square,comma,sort&compress]{natbib} 
+
+\RequirePackage{hyperref,titletoc,setspace}
+
+%% 全局设置
+\graphicspath{{pic/}}
+\setlength{\parskip}{0pt}  % 段间距
+\linespread{1.625}         % 行距，1.625对应word中的1.5倍行距。1.5*1.3/1.2=1.625
+\hypersetup{colorlinks=true,linkcolor=black,citecolor={black}}
+
 \setmainfont{Times New Roman}
 %\newCJKfontfamily\LIXINkaishu{simkai.ttf}[AutoFakeBold]
 %\newCJKfontfamily\LIXINsongti{simsun.ttc}[AutoFakeBold]
@@ -23,12 +35,6 @@
 \newcommand{\LIXINkaishu}{\kaishu}
 \newcommand{\LIXINsongti}{\songti}
 \newcommand{\LIXINtimes}{\rmfamily}
-
-\RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,amsthm}
-\RequirePackage{graphicx,color,CJKfntef,geometry,fancyhdr}
-\RequirePackage[super,square,comma,sort&compress]{natbib} 
-
-\RequirePackage{hyperref,titletoc,setspace}
 
 %% 设置默认值
 \def\value@cnabstract{摘\hspace{\ccwd}要}
@@ -68,11 +74,7 @@
 
 %\newtheorem*{proof}{证明}
 
-%% 全局设置
-\graphicspath{{pic/}}
-\setlength{\parskip}{0pt}  % 段间距
-\linespread{1.625}         % 行距，1.625对应word中的1.5倍行距。1.5*1.3/1.2=1.625
-\hypersetup{colorlinks=true,linkcolor=black,citecolor={black}}
+
 
 %% 小注用带圈字母
 \RequirePackage{xpatch}
@@ -267,7 +269,7 @@
 	
 				{\noindent\heiti\zihao{-0}\selectfont \value@cnsubmityear 届本科毕业论文（设计）}
 				{\linespread{1.25}\selectfont
-					\bfseries\LIXINkaishu\zihao{2} \value@cntitle\par}
+					\bfseries\LIXINkaishu\zihao{2} \value@cntitle\par}     %% 不知道为什么，1.25更接近word1.5倍行距
 				
 				{\linespread{1.25}\selectfont
 					\bfseries\rmfamily\zihao{2}\selectfont \value@entitle\\}

@@ -55,7 +55,7 @@ This article briefly introduces the usage of the undergraduate  \LaTeX~ thesis t
 \subsection{模板中的选项及命令}
 封面上的所有信息可以通过下列带参数的命令进行修改。
 \begin{mybox}
-\begin{tabular}{p{10cm}p{5cm}}
+\begin{tabular}{p{8cm}p{5cm}}
 	\verb|\title|         & 标题\\
 	\verb|\englishtitle|  & 英文标题\\
 	\verb|\IDnumber|      & 学号\\
@@ -65,6 +65,7 @@ This article briefly introduces the usage of the undergraduate  \LaTeX~ thesis t
 	\verb|\class|         & 班级\\ 
 	\verb|\submityear|    & 提交年\\
 	\verb|\submitmonth|   & 提交月\\
+    \verb|\submitday|     & 提交日（声明页签名日）\\
 \end{tabular}
 \end{mybox}
 \noindent 例如，本文的中文标题为“一个立信非官方本科毕业论文\LaTeX 模板”，可以使用命令
@@ -72,6 +73,9 @@ This article briefly introduces the usage of the undergraduate  \LaTeX~ thesis t
 \title{一个立信非官方本科毕业论文\LaTeX 模板}
 \end{listonly}
 \noindent 获得。
+
+\subsection{手写签名}
+如果需要手写签名，在导言区（\verb|\begin{document}|之前）加上\verb|\makesignature|命令，并将pic文件夹下的signature改成自己的手写签名即可更新声明页中的签名。注意制作手写签名时，应使签名居中，且签名四周不要留些许空白（但不要过多）。
 
 
 \subsection{各级标题}

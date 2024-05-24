@@ -58,6 +58,15 @@
 \def\value@cnsubmityear{\the\year{}}
 \def\value@cnsubmitmonth{\the\month{}}
 \def\value@cnsubmitday{\the\day{}}
+\def\value@siganture{\begin{tabular}{p{240pt}p{33pt}p{24pt}p{30pt}}
+        论文作者签名   &   年  & 月 &  日\\  
+    \end{tabular}}
+
+
+
+
+
+
 
 
 % 自定义宏命令，不需要可删除，也可自行添加需要的宏命令
@@ -244,7 +253,9 @@
 \newcommand{\submityear}[1]{\def\value@cnsubmityear{#1}}
 \newcommand{\submitmonth}[1]{\def\value@cnsubmitmonth{#1}}
 \newcommand{\submitday}[1]{\def\value@cnsubmitday{#1}}
-
+\newcommand{\makesignature}{\def\value@siganture{\begin{tabular}{p{8.5cm}p{5cm}}
+            论文作者签名 \raisebox{-10pt}{\includegraphics[height=28pt]{signature}}  &  \value@cnsubmityear 年 \value@cnsubmitmonth 月 \value@cnsubmitday 日\\  
+    \end{tabular}}}
 
 
 % 定义下划线的长度级线上内容
@@ -295,6 +306,30 @@
 					\end{center}
 				}
 	\end{center}
+
+\clearpage
+\thispagestyle{empty}
+
+\
+\newline
+\begin{center}
+    \textbf{\zihao{3}声明及论文使用的授权}%
+\end{center}
+\vspace{1cm}
+
+本人郑重声明：所呈交的论文是本人在导师的指导下取得的研究成果，论文写作严格遵循学术规范。除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写的研究成果。因本毕业论文引起的法律结果完全由本人承担。上海立信会计金融学院享有本毕业论文的研究成果。
+\newline
+\newline
+
+\value@siganture
+
+
+\vskip 4cm
+本人同意上海立信会计金融学院保留使用学位论文的规定，即：学校有权保留送交论文的复印件，允许论文被查阅和借阅；学校可以上网公布全部内容，可以采用影印、缩印或其他复制手段保存论文。
+\newline
+\newline
+
+\value@siganture
 }
 
 

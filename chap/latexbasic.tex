@@ -15,17 +15,23 @@ $$a^2+b^2=c^2,$$
 注意，行间公式一般应该带标点符号。
 \end{myexample}
 
-\begin{myexample}{数学公式举例}
+\begin{myexample}{带编号的行间公式}
 如果想得到一个带编号的行间公式，可以使用公式环境，例如
 \begin{equation}\label{eq:exm1}
     a^2+b^2=c^2.
 \end{equation}
-公式环境中的\verb|\label|命令后的参数，可以让我们方便地进行公式引用。
-你可以使用合适的字母为公式命名，并使用\verb|\eqref|进行引用。
 
-例如，在这里，我们可以使用\eqref{eq:exm1}引用上述公式。
+\end{myexample}
+
+公式环境中的\verb|\label|命令后的参数，可以让我们方便地进行公式引用。
+你可以使用合适的字母为公式命名，并使用\verb|\eqref{}|进行引用。
+\begin{myexample}{公式引用}
+在这里，我们可以使用\eqref{eq:exm1}引用上述公式。
 如果不需要引用，则不必添加label。
 \end{myexample}
+
+在LaTeX中，章节、图、表、定理等的引用与公式的引用类似，只需在相应位置加上\verb|\label{标签}| 即可引用，需要注意的是，其余引用，使用\verb|\ref{标签}|即可。注意，公式引用使用的是\verb|\eqref{}|，它可以在编号两侧自动加上括号。
+
 
 \noindent 值得注意的是，在数学公式环境中，有些符号，如：
 \begin{enumerate}

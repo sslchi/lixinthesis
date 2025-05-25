@@ -1157,7 +1157,7 @@ FUNCTION {mastersthesis}
   format.authors output
   author format.key output
   new.block
-  format.series.volume.title "title" output.check
+  format.title "title" output.check
   "D" format.mark "" output.after
   new.block
   format.masterdegree "." output.after
@@ -1261,7 +1261,7 @@ FUNCTION {phdthesis}
   format.authors output
   author format.key output
   new.block
-  format.series.volume.title "title" output.check
+  format.title "title" output.check
   "D" format.mark "" output.after
   new.block
   format.phddegree "." output.after

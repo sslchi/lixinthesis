@@ -1,0 +1,65 @@
+\section{数学公式和图表}
+数学公式在数学写作上应该已经学过，这里不做介绍，如有需要，可以参考文献~\cite{Liu2013}。
+
+\subsection{数学公式}
+值得注意的是，微分符号$d$应该用直体，写作$\d x$，$max$应写作$\max$, $min$应写作$\min$， $sin$应写作$\sin$。
+
+\begin{definition}[勾股定理]
+	假设直角三角形的三边长为$a$、 $b$、 $c$，斜边长为$c$，则
+	$$a^2+b^2=c^2.$$
+\end{definition}
+
+\begin{lemma}[勾股定理]
+	假设直角三角形的三边长为$a$、 $b$、 $c$，斜边长为$c$，则
+	$$a^2+b^2=c^2.$$
+\end{lemma}
+\begin{theorem}[勾股定理]
+	假设直角三角形的三边长为$a$、 $b$、 $c$，斜边长为$c$，则
+	$$a^2+b^2=c^2.$$
+\end{theorem}
+
+
+
+
+\subsection{图表}\label{sec:tabfig}
+
+\subsubsection{图形}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.5\linewidth]{lixinlogo.jpg}
+	\end{center}
+	\caption[图形示例]{校徽}
+\end{figure}
+
+\subsubsection{表格}
+\begin{table}[htbp]
+	\caption{三线表}\label{tab:dem}
+	\begin{center}
+		\newcolumntype{C}{>{\centering\arraybackslash}X}%
+		\begin{tabularx}{0.9\linewidth}{CCCCCC}
+			\toprule
+			1 & 2 & 3 & 4 & 5 & 6\\
+			\midrule
+			1 & 2 & 3 & 4 & 5 & 6\\
+			1 & 2 & 3 & 4 & 5 & 6\\
+			1 & 2 & 3 & 4 & 5 & 6\\
+			\bottomrule
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+
+\begin{myexample}
+ $f(x)$
+\end{myexample}
+
+\begin{lstlisting}[caption=main]
+function xdot = f(x, t)
+	r = 0.25; k = 1.4;
+    a = 1.5; b = 0.16; c = 0.9; d = 0.8;
+
+  	xdot(1) = r*x(1)*(1 - x(1)/k) - a*x(1)*x(2)/(1 + b*x(1));
+  	xdot(2) = c*a*x(1)*x(2)/(1 + b*x(1)) - d*x(2);
+
+end
+\end{lstlisting}

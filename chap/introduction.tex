@@ -1,0 +1,117 @@
+\section{免责声明(Disclaimer)}
+本文简要介绍了本科毕业论文\LaTeX 模板的使用方法。在此，模板作者作声明如下：
+\begin{enumerate}
+	\item 本模板为作者无偿制作撰写，任何人都可以免费使用本模板。
+	\item 本模板未经学校相关部门审核及授权，在使用前请务必斟酌。
+	\item 作者不对模板能够通过学校/学院的格式审查做任何明示或暗示的保证，任何由于使用本模板而引起的论文格式审查问题均与本模板作者无关。	
+\end{enumerate}
+
+This article briefly introduces the usage of the undergraduate  \LaTeX~ thesis template. The template author makes the following statements:
+\begin{enumerate}
+    \item This template was created and written by the author voluntarily, and anyone can use it for free.
+    \item This template has not been reviewed or authorized by the relevant school departments, so please carefully consider its use.
+    \item The author makes no explicit or implicit guarantees that the template will pass the school/college's format review. Any issues arising from the use of this template concerning the format review are not the responsibility of the template author.
+\end{enumerate}
+
+\section{系统要求}
+模板通过 CTeX 宏包来获得中文支持。 CTeX 宏包提供了一个
+统一的中文\LaTeX 文档框架, 一般情况下，在安装TeXLive或其它发行版时，它已经被下载，无需单独下载。
+
+此外， 模板还使用了 amsmath、 amsthm、 amsfonts、amssymb、 bm 和 hyperref等宏包。
+
+\subsection{下载与安装}
+模板的最新版本可以从\url{https://github.com/sslchi/lixinthesis}下载。模板包含一个文档类型文件.cls以及一个使用模板文件main.tex（也即本文的源文件），用户
+可以通过修改这个main.tex以及chap文件夹下的内容撰写自己的学位论文。
+
+
+由于参考文献使用GB7714标准，因此文档中还包含了Zeping Lee（李泽平） 编写的参考文献的样式文件（即两个后缀为.bst的文件，项目链接为：\url{https://github.com/zepinglee/gbt7714-bibtex-style}）。
+
+\subsection{编译方式}
+本模板基于cetxart宏包，暂时只支持xeLaTeX方式进行编译。使用{\bfseries TexStudio编辑器}的用户可以直接点击编辑器上的构建并查看按钮进行编译，无需进行设置； 使用其它编辑器的用户请设置编译方式为xeLaTeX。 {\color{red}目前，只在TeXLive 2023、2024上测试过，如果不能运行，请先检查版本是否是TeXLive 2023、2024。}
+
+\subsection{常见问题}
+
+\begin{enumerate}
+    \item 如提示缺少字体，请下载相应的字体。
+    \item 如中文显示乱码， 请检查文件的编码方式，并将编码方式设置为utf8。
+    \item 使用在线\LaTeX~编辑器overleaf时，因其所用系统为Ubuntu，字体与Win系统下的字体略有差别。
+\end{enumerate}
+
+\subsection{问题反馈}
+因为毕业论文的要求很详细，从字体到到段距、行距等，细节不知凡几。因此难免有疏漏之处{\color{red}（再次申明，作者不对模板能够通过学校/学院的格式审查做任何明示或暗示的保证）}，因此用户在使用中如果发现问题，可以联系:
+\begin{center}
+公众号：MathICU
+\end{center}
+
+{\large \color{red}如果有同学愿意接手这个模板的维护，那是再好不过的了。}
+
+
+
+\section{基本选项及命令介绍}\label{sec:basic}
+本节介绍模板的一些基本选项和命令。
+
+
+
+\subsection{模板中的选项及命令}
+封面上的所有信息可以通过下列带参数的命令进行修改。
+\begin{mybox}
+\begin{tabular}{p{10cm}p{5cm}}
+	\verb|\title|         & 标题\\
+	\verb|\englishtitle|  & 英文标题\\
+	\verb|\IDnumber|      & 学号\\
+	\verb|\author|        & 作者\\
+	\verb|\school|        & 学院\\
+	\verb|\major|         & 专业\\
+	\verb|\class|         & 班级\\ 
+	\verb|\submityear|    & 提交年\\
+	\verb|\submitmonth|   & 提交月\\
+    \verb|\submitday|     & 提交日（声明页签名日）\\
+\end{tabular}
+\end{mybox}
+\noindent 例如，本文的中文标题为“一个立信非官方本科毕业论文\LaTeX 模板”，可以使用命令
+\begin{listonly}{}
+\title{一个立信非官方本科毕业论文\LaTeX 模板}
+\end{listonly}
+\noindent 获得。
+
+\subsection{手写签名}
+如果需要手写签名，在导言区（\verb|\begin{document}|之前）加上\verb|\makesignature|命令，并将pic文件夹下的signature改成自己的手写签名即可更新声明页中的签名。注意制作手写签名时，应使签名居中，且签名四周要留些许空白（但不要过多）。
+
+
+\subsection{各级标题}
+各级标可以使用如下命令获得：
+\begin{mybox}
+	\begin{tabular}{p{10cm}p{5cm}}
+		\verb|\section|         	& 一级标题\\
+		\verb|\subsection|       	& 二级标题\\
+		\verb|\subsubsection|      	& 三级标题\\
+		\verb|\paragraph|        	& 四级标题\\
+	\end{tabular}
+\end{mybox}
+\noindent 例如，下面是一个三级标题的使用示例：
+\begin{myexample}{使用标题示例}
+\subsubsection{这是一个三级标题}
+\end{myexample}
+\noindent 其它级别的标题类似。
+
+
+\subsection{定理环境}
+在模板中，我们还预先定义了一些定理环境。这些环境的名字及意义如下
+\begin{mybox}
+	\begin{tabular}{p{10cm}p{5cm}}
+		\verb|example|         	& 例\\
+		\verb|theorem|       	& 定理\\
+		\verb|remark|      		& 注\\
+		\verb|lemma|        	& 引理\\
+		\verb|definition|       & 定义\\
+		\verb|proof|         	& 证明\\
+	\end{tabular}
+\end{mybox}
+\noindent 使用方法如下：
+\begin{myexample}{定理环境使用举例}
+\begin{definition}[直角三角形]\label{def:exm1}
+    若三角形有一个角是直角，则称该三角形为直角三角形。
+\end{definition}
+可以使用定理~\ref{def:exm1}引用该定理。
+\end{myexample}
+\noindent 其余定理环境的使用方式类似。

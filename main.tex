@@ -1,0 +1,112 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+%  请使用xeLaTeX进行编译
+\documentclass[twoside,AutoFakeBold=true]{lixinthesis}  
+%      onesid|twoside         postdoc 请选单栏(编写规则要求单面)
+
+
+%%% 引用格式使用数字  [1,2] 
+%\usepackage[numbers,comma, sort&compress]{natbib}      
+
+%%% 引用格式使用上标  ^{[1,2]}
+\usepackage[super,square,comma,sort&compress]{natbib} 
+
+%%%使用GBT7714标准的参考文献格式 (按引用顺序排列参考文献)
+\bibliographystyle{lixin-bachelor-check} 
+
+%%%使用GBT7714标准的参考文献格式(按作者-日期排列参考文献)
+%\bibliographystyle{gbt-author-year} 
+
+%\usepackage{hypernat} 
+
+\usepackage{empheq}
+\usepackage{subfig,xcolor,color}
+\usepackage{comment,multirow,float,zhlipsum,booktabs,tabularx}
+\usepackage{tcolorbox,listings,matlab-prettifier}
+\usepackage{float,subfig}
+
+\tcbuselibrary{listings,breakable,skins}
+%\lstset{
+%	style = Matlab-editor,
+%%	numbers = left,
+%%	frame = single,
+%}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=none,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=4
+}
+
+\renewcommand{\lstlistingname}{代码}
+% tcolorbox settings
+\newtcolorbox{mybox}[1][]{fonttitle=\bfseries,title={#1}}
+\newtcblisting{myexample}[1]{fonttitle=\bfseries,title=#1,listing and text}
+\newtcblisting{myexample2}[1]{fonttitle=\bfseries,title=#1,listing side text}
+\newtcblisting{listonly}[1]{fonttitle=\bfseries,title=#1,listing only}
+% set search path
+\graphicspath{{pic/}}
+
+%%%    中文题名页
+\title{一个立信非官方本科毕业论文\LaTeX 模板}
+\englishtitle{An unofficial undergraduate\\ thesis \LaTeX~ template for LiXin}
+\IDnumber{20201234}
+\author{sslchi}
+\school{统计与数学学院}
+\major{数学与应用数学}
+\class{2020级数学与应用数学1班}
+\advisor{指导老师}
+\submityear{\the\year{}}%提交年份
+\submitmonth{\the\month{}}%提交月份
+\submitday{\the\month{}} %提交日
+\makesignature % 如需要手写签名，将本行注释去掉
+
+
+%%%%%%%%%%%%%%%%%% 自定义宏命令 %%%%%%%%%%%%%%%
+
+\renewcommand{\d}{\mathrm{d}} %% \d 已经有\d 这个命令，用renewcommand
+\newcommand{\dx}{\mathrm{d}x} %% \dx 没有\dx 这个命令，用newcommand
+
+%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+\maketitle  %%%% 制作封面
+
+
+\frontmatter %%%% 前文部分
+
+\input{chap/abstract}
+
+\tableofcontents
+
+
+\mainmatter %%%% 正文部分
+
+\input{chap/introduction}
+\input{chap/latexbasic}
+\input{chap/latexadvance}
+
+\backmatter %%%% 后文部分
+
+\bibliography{bibref} %%% 参考文献
+\input{chap/appendix}   %%%% 附录，不需要注释掉
+\input{chap/thanks}     %%%% 致谢
+
+\end{document}

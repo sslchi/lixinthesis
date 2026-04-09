@@ -105,6 +105,9 @@
 \def\value@enkeywords{\LIXINtimesbd Key words:~}
 \def\value@thanks{致\hspace{\ccwd}谢}
 \def\value@appendix{附\hspace{\ccwd}录}
+
+
+%% 设置图表格斯
 \captionsetup[subfigure]{labelformat=simple}
 \renewcommand{\figurename}{\LIXINsongti 图}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
@@ -112,6 +115,7 @@
 \captionsetup[subtable]{labelformat=simple}
 \renewcommand{\tablename}{\LIXINsongti 表}
 \renewcommand{\thesubtable}{(\alph{subtable})}
+
 \DeclareCaptionFont{whao}{\zihao{5}}
 \captionsetup[figure]{font=whao}
 \captionsetup[table]{font=whao}

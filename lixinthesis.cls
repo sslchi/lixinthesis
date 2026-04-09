@@ -21,7 +21,7 @@
 
 \RequirePackage{hyperref,titletoc,setspace}
 \RequirePackage{fontspec,ifplatform}
-\RequirePackage{caption}
+\RequirePackage{caption,subfig}
 
 %% 全局设置
 \graphicspath{{pic/}}
@@ -105,9 +105,13 @@
 \def\value@enkeywords{\LIXINtimesbd Key words:~}
 \def\value@thanks{致\hspace{\ccwd}谢}
 \def\value@appendix{附\hspace{\ccwd}录}
-
+\captionsetup[subfigure]{labelformat=simple}
 \renewcommand{\figurename}{\LIXINsongti 图}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+
+\captionsetup[subtable]{labelformat=simple}
 \renewcommand{\tablename}{\LIXINsongti 表}
+\renewcommand{\thesubtable}{(\alph{subtable})}
 \DeclareCaptionFont{whao}{\zihao{5}}
 \captionsetup[figure]{font=whao}
 \captionsetup[table]{font=whao}

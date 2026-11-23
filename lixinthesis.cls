@@ -17,7 +17,7 @@
 
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,amsthm}
 \RequirePackage{graphicx,color,CJKfntef,geometry,fancyhdr}
-\RequirePackage[super,square,comma,sort&compress]{natbib} 
+\RequirePackage[sort&compress]{gbt7714}
 
 \RequirePackage{hyperref,titletoc,setspace}
 \RequirePackage{fontspec,ifplatform}
@@ -277,7 +277,6 @@
 
 
 %%% 设置参考文献、目录
-%%% 设置参考文献、目录
 \setlength{\bibsep}{0cm}
 
 % 设置参考文献标题并加入目录
@@ -288,8 +287,9 @@
     \section*{\refname}%
 }
 
-% 设置参考文献行距
+% 设置参考文献样式及行距
 \AtBeginDocument{%
+    \bibliographystyle{gbt7714-numerical}%
     \let\lixnbibliography\bibliography
     \renewcommand{\bibliography}[1]{%
         \begin{spacing}{1.625}

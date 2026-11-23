@@ -18,6 +18,7 @@
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,amsthm}
 \RequirePackage{graphicx,color,CJKfntef,geometry,fancyhdr}
 \RequirePackage[sort&compress]{gbt7714}
+\citestyle{super}
 
 \RequirePackage{hyperref,titletoc,setspace}
 \RequirePackage{fontspec,ifplatform}
@@ -277,25 +278,23 @@
 
 
 %%% 设置参考文献、目录
+\bibliographystyle{gbt7714-numerical}
 \setlength{\bibsep}{0cm}
 
 % 设置参考文献标题并加入目录
 \renewcommand{\bibsection}{%
     \clearpage
+    \section*{\refname}%
     \phantomsection
     \addcontentsline{toc}{section}{参考文献}%
-    \section*{\refname}%
 }
 
-% 设置参考文献样式及行距
-\AtBeginDocument{%
-    \bibliographystyle{gbt7714-numerical}%
-    \let\lixnbibliography\bibliography
-    \renewcommand{\bibliography}[1]{%
-        \begin{spacing}{1.625}
-            \lixnbibliography{#1}%
-        \end{spacing}
-    }%
+% 设置参考文献行距
+\let\lixnbibliography\bibliography
+\renewcommand{\bibliography}[1]{%
+    \begin{spacing}{1.625}
+        \lixnbibliography{#1}%
+    \end{spacing}
 }
 
 

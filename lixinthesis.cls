@@ -277,14 +277,27 @@
 
 
 %%% 设置参考文献、目录
+%%% 设置参考文献、目录
 \setlength{\bibsep}{0cm}
-\let\lixnbibliography\bibliography
-\renewcommand{\bibliography}[1]{
-\begin{spacing}{1.625}
-	\lixnbibliography{#1}%
-\end{spacing}
-\addcontentsline{toc}{section}{参考文献}
+
+% 设置参考文献标题并加入目录
+\renewcommand{\bibsection}{%
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{section}{参考文献}%
+    \section*{\refname}%
 }
+
+% 设置参考文献行距
+\AtBeginDocument{%
+    \let\lixnbibliography\bibliography
+    \renewcommand{\bibliography}[1]{%
+        \begin{spacing}{1.625}
+            \lixnbibliography{#1}%
+        \end{spacing}
+    }%
+}
+
 
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{4}
